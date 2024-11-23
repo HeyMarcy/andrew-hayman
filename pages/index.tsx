@@ -47,6 +47,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             <h2 className='text-base  uppercase tracking-wide text-white/75'>
               Icon Gallery <br></br>Viewing Room
             </h2>
+            {/* // Keeping for reference */}
             {/* <h1 className=' mb-0 text-3xl  uppercase tracking-widest lg:text-4xl xl:text-4xl'>
             Tears <span className="text-xl tracking-normal">for</span> Fears
             </h1> */}
