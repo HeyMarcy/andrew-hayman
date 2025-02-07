@@ -54,38 +54,38 @@ export default function SharedModal({
       }}
     >
       <div
-        className='relative z-50 flex aspect-[3/2] h-full w-full max-w-7xl items-center wide:h-full'
+        className="relative z-50 flex aspect-[3/2] h-full w-full max-w-7xl items-center wide:h-full"
         {...handlers}
       >
         {/* close modal */}
-        <div className='absolute right-4 top-3 z-50 flex items-center gap-2 p-3 text-white'>
+        <div className="absolute right-4 top-3 z-50 flex items-center gap-2 p-3 text-white">
           <button
             onClick={() => closeModal()}
-            className='rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white'
+            className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
           >
             {navigation ? (
-              <XMarkIcon className='h-5 w-5' />
+              <XMarkIcon className="h-5 w-5" />
             ) : (
-              <ArrowUturnLeftIcon className='h-5 w-5' />
+              <ArrowUturnLeftIcon className="h-5 w-5" />
             )}
           </button>
         </div>
         {/* image label */}
-        <div className='font-sm absolute left-5 top-4   z-50 bg-black px-2 py-1 text-white'>
-          <p className='text-sm md:text-base '> {imageLabel}</p>
+        <div className="font-sm absolute left-5 top-4   z-50 bg-black px-2 py-1 text-white">
+          <p className="text-sm md:text-base "> {imageLabel}</p>
         </div>
         {/* Main image */}
-        <div className='h-97 w-full placeholder:overflow-hidden'>
-          <div className='relative flex aspect-[1/1] items-center justify-center pb-24'>
+        <div className="h-97 w-full placeholder:overflow-hidden">
+          <div className="relative flex aspect-[1/1] items-center justify-center pb-24">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={index}
                 custom={direction}
                 variants={variants}
-                initial='enter'
-                animate='center'
-                exit='exit'
-                className='absolute'
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className="absolute"
               >
                 <CldImage
                   src={currentImage.public_id}
@@ -93,7 +93,7 @@ export default function SharedModal({
                   height={aspectRatio > 1 ? 499 : 749}
                   priority
                   blurDataURL={currentImage.blurDataUrl}
-                  placeholder='blur'
+                  placeholder="blur"
                   alt={imageLabel}
                   onLoadingComplete={() => setLoaded(true)}
                 />
@@ -103,28 +103,28 @@ export default function SharedModal({
         </div>
 
         {/* Buttons + bottom nav bar */}
-        <div className='absolute inset-0 mx-auto flex max-w-7xl items-center justify-center'>
+        <div className="absolute inset-0 mx-auto flex max-w-7xl items-center justify-center">
           {/* Buttons */}
           {loaded && (
-            <div className='relative aspect-[3/2] max-h-full w-full'>
+            <div className="relative aspect-[3/2] max-h-full w-full">
               {navigation && (
                 <>
                   {index > 0 && (
                     <button
-                      className='absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none'
+                      className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
                       style={{ transform: "translate3d(0, 0, 0)" }}
                       onClick={() => changePhotoId(index - 1)}
                     >
-                      <ChevronLeftIcon className='h-6 w-6' />
+                      <ChevronLeftIcon className="h-6 w-6" />
                     </button>
                   )}
                   {index + 1 < images.length && (
                     <button
-                      className='absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none'
+                      className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
                       style={{ transform: "translate3d(0, 0, 0)" }}
                       onClick={() => changePhotoId(index + 1)}
                     >
-                      <ChevronRightIcon className='h-6 w-6' />
+                      <ChevronRightIcon className="h-6 w-6" />
                     </button>
                   )}
                 </>
@@ -133,10 +133,10 @@ export default function SharedModal({
           )}
           {/* Bottom Nav bar */}
           {navigation && (
-            <div className='fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-black/0 to-black/60'>
+            <div className="fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-black/0 to-black/60">
               <motion.div
                 initial={false}
-                className='mx-auto mb-6 mt-6 flex aspect-[3/2] h-14'
+                className="mx-auto mb-6 mt-6 flex aspect-[3/2] h-14"
               >
                 <AnimatePresence initial={false}>
                   {filteredImages.map(({ public_id, format, id }) => (
